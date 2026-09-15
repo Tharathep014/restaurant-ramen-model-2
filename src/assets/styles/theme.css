@@ -1,0 +1,53 @@
+:root {
+  /* --- Color: warm white base, chili-oil orange accent, broth-brown ink --- */
+  --bg: #fcfaf6;
+  --surface: #fff4e8;
+  --surface-raised: #ffffff;
+  --ink: #2a211b;
+  --ink-soft: #6f5f52;
+  --ink-faint: #a89a8b;
+  --line: #ecdfcd;
+  --accent: #e4572e;
+  --accent-dark: #b23f1e;
+  --accent-soft: #fbd9c2;
+  --accent-ink: #fff8f3;
+  --success: #5f7a52;
+  --header-bg: rgba(252, 250, 246, 0.92);
+
+  /* --- Type --- */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* --- Shape & rhythm --- */
+  --radius-ticket: 4px 4px 18px 4px;
+  --radius-bowl: 999px;
+  --radius-card: 14px;
+  --space-1: 0.4rem;
+  --space-2: 0.8rem;
+  --space-3: 1.4rem;
+  --space-4: 2.2rem;
+  --space-5: 3.6rem;
+  --shadow-card: 0 1px 2px rgba(42, 33, 27, 0.06), 0 8px 20px -12px rgba(42, 33, 27, 0.18);
+  --max-content: 1180px;
+  --max-column: 460px;
+}
+
+:root.theme-dark {
+  --bg: #050505;
+  --surface: #151515;
+  --surface-raised: #202020;
+  --ink: #f7f1eb;
+  --ink-soft: #c2b8ae;
+  --ink-faint: #897f77;
+  --line: #39332e;
+  --accent-soft: #632b1c;
+  --accent-ink: #fff8f3;
+  --header-bg: rgba(17, 17, 17, 0.96);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35), 0 8px 20px -12px rgba(0, 0, 0, 0.65);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Intentionally not auto-switching to dark: this build is the light/white
+     variant of the reference flow. Left here as a hook if a future dark
+     mode is requested. */
+}
