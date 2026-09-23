@@ -25,9 +25,12 @@ export default function Categories() {
       <div
         style={{
           display: 'flex',
+          alignItems: 'center',
           gap: '0.6rem',
           overflowX: 'auto',
           margin: 'var(--space-3) 0',
+          paddingBottom: '0.15rem',
+          flexWrap: 'nowrap',
         }}
       >
         {categories.map((cat) => (
@@ -40,24 +43,19 @@ export default function Categories() {
             {cat.name}
           </Link>
         ))}
-      </div>
-
-      <div className="menu-sort" aria-label="Sort menu by price">
-        <span>Sort by price</span>
-        <button
-          type="button"
-          className={sortOrder === 'desc' ? 'menu-sort__button menu-sort__button--active' : 'menu-sort__button'}
-          onClick={() => setSortOrder('desc')}
-        >
-          High to low
-        </button>
-        <button
-          type="button"
-          className={sortOrder === 'asc' ? 'menu-sort__button menu-sort__button--active' : 'menu-sort__button'}
-          onClick={() => setSortOrder('asc')}
-        >
-          Low to high
-        </button>
+        <div className="menu-sort" aria-label="Sort menu by price">
+          <span>Sort by price</span>
+          <select
+            className="menu-sort__select"
+            value={sortOrder || ''}
+            onChange={(event) => setSortOrder(event.target.value || null)}
+            aria-label="Sort menu by price"
+          >
+            <option value="">Choose order</option>
+            <option value="desc">High to low</option>
+            <option value="asc">Low to high</option>
+          </select>
+        </div>
       </div>
 
       {!loading && activeItems.length === 0 && (

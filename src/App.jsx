@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Navigate, Routes, Route } from 'react-router-dom'
 import { Layout } from './components/layout/Layout'
 import Home from './pages/Home'
 import Categories from './pages/Categories'
@@ -9,6 +9,9 @@ import OrderConfirmation from './pages/OrderConfirmation'
 import SignIn from './pages/SignIn'
 import Profile from './pages/Profile'
 import Search from './pages/Search'
+import Admin from './pages/Admin'
+import { AdminLayout } from './components/layout/AdminLayout'
+import AdminSignIn from './pages/AdminSignIn'
 import { ThemeProvider } from './context/ThemeContext'
 import { useAuth } from './context/AuthContext'
 
@@ -26,16 +29,24 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
           <Route path="/search" element={<Search />} />
       </Route>
+      <Route path="/admin/sign-in" element={<AdminSignIn />} />
+      <Route element={<RequireAdmin><AdminLayout /></RequireAdmin>}>
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/menu" element={<Admin />} />
+          <Route path="/admin/orders" element={<Admin />} />
+        </Route>
     </Routes>
   )
 }
 
-function RequireAuth({ children }) {
+function RequireAdmin({ children }) {
   const { user, loading } = useAuth()
 
   if (loading) {
     return <div className="auth-loading" role="status">Checking your sign-in...</div>
   }
 
-  return user ? children : <Navigate to="/sign-in" replace />
+  if (user?.role !== 'admin') return <Navigate to="/admin/sign-in" replace />
+
+  return children
 }

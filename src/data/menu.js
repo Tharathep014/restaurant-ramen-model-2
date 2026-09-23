@@ -12,6 +12,7 @@ export const menuItems = [
   {
     id: 'tonkotsu',
     categoryId: 'ramen',
+    image: '/images/ramen/Tonkotsu_ramen.jpg',
     name: 'Tonkotsu Ramen',
     price: 129,
     description: 'Rich and creamy pork bone broth with chashu pork.',
@@ -21,6 +22,7 @@ export const menuItems = [
   {
     id: 'shoyu',
     categoryId: 'ramen',
+    image: '/images/ramen/Shoyu_Ramen.jpg',
     name: 'Shoyu Ramen',
     price: 119,
     description: 'Savory soy sauce broth with chashu pork and green onions.',
@@ -30,6 +32,7 @@ export const menuItems = [
   {
     id: 'miso-ramen',
     categoryId: 'ramen',
+    image: '/images/ramen/Miso_Ramen.jpg',
     name: 'Miso Ramen',
     price: 129,
     description: 'Rich miso broth with corn, butter, and chashu pork.',
@@ -39,6 +42,7 @@ export const menuItems = [
   {
     id: 'shio-ramen',
     categoryId: 'ramen',
+    image: '/images/ramen/shio_ramen.jpg',
     name: 'Shio Ramen',
     price: 119,
     description: 'Light salt-based broth with chicken and fresh vegetables.',
@@ -48,6 +52,7 @@ export const menuItems = [
   {
     id: 'spicy-ramen',
     categoryId: 'ramen',
+    image: '/images/ramen/Spicy_Ramen.jpg',
     name: 'Spicy Ramen',
     price: 139,
     description: 'Spicy savory broth with chashu pork and chili oil.',
@@ -57,6 +62,7 @@ export const menuItems = [
   {
     id: 'chicken-ramen',
     categoryId: 'ramen',
+    image: '/images/ramen/Chicken_Ramen.jpg',
     name: 'Chicken Ramen',
     price: 119,
     description: 'Smooth chicken broth with tender chicken and vegetables.',
@@ -66,6 +72,7 @@ export const menuItems = [
   {
     id: 'black-garlic-ramen',
     categoryId: 'ramen',
+    image: '/images/ramen/Black_Garlic_Ramen.jpg',
     name: 'Black Garlic Ramen',
     price: 149,
     description: 'Rich broth with aromatic black garlic oil and chashu pork.',
@@ -75,6 +82,7 @@ export const menuItems = [
   {
     id: 'tantanmen',
     categoryId: 'ramen',
+    image: '/images/ramen/Tantanmen_Ramen.jpg',
     name: 'Tantanmen',
     price: 149,
     description: 'Creamy sesame broth with spicy minced pork.',
@@ -84,6 +92,7 @@ export const menuItems = [
   {
     id: 'chashu-ramen',
     categoryId: 'ramen',
+    image: '/images/ramen/Chashu_Ramen.jpg',
     name: 'Chashu Ramen',
     price: 159,
     description: 'Classic ramen topped with tender chashu pork.',
@@ -93,6 +102,7 @@ export const menuItems = [
   {
     id: 'seafood-ramen',
     categoryId: 'ramen',
+    image: '/images/ramen/Seafood_Ramen.jpg',
     name: 'Seafood Ramen',
     price: 169,
     description: 'Savory broth with shrimp, squid, fish, and vegetables.',
@@ -102,6 +112,7 @@ export const menuItems = [
   {
     id: 'vegetable-ramen',
     categoryId: 'ramen',
+    image: '/images/ramen/Vegetable_Ramen.jpg',
     name: 'Vegetable Ramen',
     price: 109,
     description: 'Light broth with fresh vegetables and green onions.',
@@ -111,6 +122,7 @@ export const menuItems = [
   {
     id: 'deluxe-ramen',
     categoryId: 'ramen',
+    image: '/images/ramen/Deluxe_Ramen.jpg',
     name: 'Deluxe Ramen',
     price: 179,
     description: 'Premium ramen with chashu, egg, seaweed, and bamboo shoots.',
@@ -120,6 +132,7 @@ export const menuItems = [
   {
     id: 'gyoza',
     categoryId: 'sides',
+    image: '/images/sides/Gyoza.jpg',
     name: 'Gyoza',
     price: 69,
     description: 'Pan-fried Japanese dumplings filled with pork and vegetables.',
@@ -129,6 +142,7 @@ export const menuItems = [
   {
     id: 'karaage',
     categoryId: 'sides',
+    image: '/images/sides/Karaage.jpg',
     name: 'Karaage',
     price: 89,
     description: 'Crispy Japanese-style fried chicken with a savory flavor.',
@@ -138,6 +152,7 @@ export const menuItems = [
   {
     id: 'takoyaki',
     categoryId: 'sides',
+    image: '/images/sides/Takoyaki.jpg',
     name: 'Takoyaki',
     price: 79,
     description: 'Soft octopus balls topped with sauce, mayonnaise, and bonito flakes.',
@@ -147,6 +162,7 @@ export const menuItems = [
   {
     id: 'japanese-fried-chicken-wings',
     categoryId: 'sides',
+    image: '/images/sides/Japanese_Fried_Chicken_Wings.jpg',
     name: 'Japanese Fried Chicken Wings',
     price: 89,
     description: 'Crispy chicken wings seasoned with Japanese spices.',
@@ -156,6 +172,7 @@ export const menuItems = [
   {
     id: 'agedashi-tofu',
     categoryId: 'sides',
+    image: '/images/sides/Agedashi_Tofu.jpg',
     name: 'Agedashi Tofu',
     price: 69,
     description: 'Crispy tofu served with a light Japanese-style sauce.',
@@ -165,6 +182,7 @@ export const menuItems = [
   {
     id: 'ebi-tempura',
     categoryId: 'sides',
+    image: '/images/sides/Ebi_Tempura.jpg',
     name: 'Ebi Tempura',
     price: 99,
     description: 'Crispy shrimp coated in light Japanese tempura batter.',
@@ -174,6 +192,7 @@ export const menuItems = [
   {
     id: 'vegetable-tempura',
     categoryId: 'sides',
+    image: '/images/sides/Vegetable_Tempura.jpg',
     name: 'Vegetable Tempura',
     price: 79,
     description: 'Assorted vegetables fried in a light crispy batter.',
@@ -183,6 +202,7 @@ export const menuItems = [
   {
     id: 'french-fries',
     categoryId: 'sides',
+    image: '/images/sides/french_fries.jpg',
     name: 'French Fries',
     price: 59,
     description: 'Crispy golden fries served with dipping sauce.',
@@ -192,6 +212,7 @@ export const menuItems = [
   {
     id: 'ramune',
     categoryId: 'drinks',
+    image: '/images/drinks/ramune.png',
     name: 'Ramune',
     price: 45,
     description: 'Original flavor Japanese soda.',
@@ -201,6 +222,7 @@ export const menuItems = [
   {
     id: 'green-tea',
     categoryId: 'drinks',
+    image: '/images/drinks/hot-green-tea.jpg',
     name: 'Hot Green Tea',
     price: 30,
     description: 'Roasted genmaicha.',
@@ -210,6 +232,7 @@ export const menuItems = [
   {
     id: 'yuzu-soda',
     categoryId: 'drinks',
+    image: '/images/drinks/yuzu-soda.jpg',
     name: 'Yuzu Soda',
     price: 55,
     description: 'Refreshing Japanese citrus soda.',
@@ -219,6 +242,7 @@ export const menuItems = [
   {
     id: 'calpico',
     categoryId: 'drinks',
+    image: '/images/drinks/calpico.jpg',
     name: 'Calpico',
     price: 50,
     description: 'Lightly sweet and creamy cultured milk drink.',
@@ -228,6 +252,7 @@ export const menuItems = [
   {
     id: 'coca-cola',
     categoryId: 'drinks',
+    image: '/images/drinks/coca-cola.jpg',
     name: 'Coca-Cola',
     price: 35,
     description: 'Classic Coca-Cola served chilled.',
@@ -237,6 +262,7 @@ export const menuItems = [
   {
     id: 'coca-cola-zero',
     categoryId: 'drinks',
+    image: '/images/drinks/coca-cola-zero.jpg',
     name: 'Coca-Cola Zero',
     price: 35,
     description: 'Coca-Cola Zero Sugar served chilled.',
@@ -246,6 +272,7 @@ export const menuItems = [
   {
     id: 'orange-juice',
     categoryId: 'drinks',
+    image: '/images/drinks/orange-juice.jpg',
     name: 'Orange Juice',
     price: 45,
     description: 'Bright and refreshing orange juice.',
@@ -255,6 +282,7 @@ export const menuItems = [
   {
     id: 'oolong-tea',
     categoryId: 'drinks',
+    image: '/images/drinks/oolong-tea.jpg',
     name: 'Oolong Tea',
     price: 35,
     description: 'Fragrant roasted oolong tea served chilled.',
@@ -264,6 +292,7 @@ export const menuItems = [
   {
     id: 'matcha-latte',
     categoryId: 'drinks',
+    image: '/images/drinks/matcha-latte.jpg',
     name: 'Matcha Latte',
     price: 65,
     description: 'Smooth matcha blended with creamy milk.',
@@ -273,6 +302,7 @@ export const menuItems = [
   {
     id: 'thai-tea',
     categoryId: 'drinks',
+    image: '/images/drinks/thai-tea.jpg',
     name: 'Thai Tea',
     price: 35,
     description: 'Sweet and creamy Thai iced tea.',
@@ -282,6 +312,7 @@ export const menuItems = [
   {
     id: 'lemon-juice',
     categoryId: 'drinks',
+    image: '/images/drinks/lemon-juice.jpg',
     name: 'Lemon Juice',
     price: 35,
     description: 'Bright and refreshing lemon juice.',
@@ -291,6 +322,7 @@ export const menuItems = [
   {
     id: 'extra-egg',
     categoryId: 'extras',
+    image: '/images/extras/extra-ajitama-egg.jpg',
     name: 'Extra Ajitama Egg',
     price: 25,
     description: 'Add a marinated soft-boiled egg with a rich yolk.',
@@ -300,6 +332,7 @@ export const menuItems = [
   {
     id: 'extra-chashu',
     categoryId: 'extras',
+    image: '/images/extras/extra-chashu.jpg',
     name: 'Extra Chashu',
     price: 40,
     description: 'Add tender slices of slow-cooked chashu pork.',
@@ -309,6 +342,7 @@ export const menuItems = [
   {
     id: 'extra-noodle',
     categoryId: 'extras',
+    image: '/images/extras/extra-noodles.png',
     name: 'Extra Noodles',
     price: 30,
     description: 'Add an extra serving of fresh ramen noodles.',
@@ -318,6 +352,7 @@ export const menuItems = [
   {
     id: 'extra-green-onions',
     categoryId: 'extras',
+    image: '/images/extras/extra-green-onions.jpg',
     name: 'Extra Green Onions',
     price: 15,
     description: 'Add fresh sliced green onions for extra freshness.',
@@ -327,6 +362,7 @@ export const menuItems = [
   {
     id: 'extra-bamboo-shoots',
     categoryId: 'extras',
+    image: '/images/extras/extra-bamboo-shoots.jpg',
     name: 'Extra Bamboo Shoots',
     price: 20,
     description: 'Add seasoned bamboo shoots for a crunchy texture.',
@@ -336,6 +372,7 @@ export const menuItems = [
   {
     id: 'extra-seaweed',
     categoryId: 'extras',
+    image: '/images/extras/extra-seaweed.jpg',
     name: 'Extra Seaweed',
     price: 15,
     description: 'Add Japanese nori seaweed for extra flavor.',
@@ -345,54 +382,10 @@ export const menuItems = [
   {
     id: 'extra-corn',
     categoryId: 'extras',
+    image: '/images/extras/extra-corn.jpg',
     name: 'Extra Corn',
     price: 15,
     description: 'Add sweet corn for a slightly sweet flavor.',
-    tag: null,
-    spice: 0,
-  },
-  {
-    id: 'extra-black-garlic-oil',
-    categoryId: 'extras',
-    name: 'Extra Black Garlic Oil',
-    price: 15,
-    description: 'Add aromatic black garlic oil for a richer taste.',
-    tag: null,
-    spice: 0,
-  },
-  {
-    id: 'extra-spicy-sauce',
-    categoryId: 'extras',
-    name: 'Extra Spicy Sauce',
-    price: 15,
-    description: 'Add spicy chili sauce for extra heat.',
-    tag: 'Spicy',
-    spice: 2,
-  },
-  {
-    id: 'extra-butter',
-    categoryId: 'extras',
-    name: 'Extra Butter',
-    price: 20,
-    description: 'Add creamy butter for a richer and smoother broth.',
-    tag: null,
-    spice: 0,
-  },
-  {
-    id: 'extra-bean-sprouts',
-    categoryId: 'extras',
-    name: 'Extra Bean Sprouts',
-    price: 15,
-    description: 'Add fresh bean sprouts for extra crunch.',
-    tag: null,
-    spice: 0,
-  },
-  {
-    id: 'extra-pork-mince',
-    categoryId: 'extras',
-    name: 'Extra Pork Mince',
-    price: 35,
-    description: 'Add seasoned minced pork for extra flavor.',
     tag: null,
     spice: 0,
   },

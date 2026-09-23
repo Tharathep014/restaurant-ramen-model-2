@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { Button } from '../components/ui/Button'
 
@@ -60,6 +60,9 @@ export default function SignIn() {
           {loading ? 'Signing in…' : 'Sign in'}
         </Button>
       </form>
+      <p style={{ marginTop: 'var(--space-3)', textAlign: 'center', fontSize: '0.8rem' }}>
+        Staff member? <Link to="/admin/sign-in" style={{ color: 'var(--accent-dark)', fontWeight: 600 }}>Admin sign in</Link>
+      </p>
     </div>
   )
 }

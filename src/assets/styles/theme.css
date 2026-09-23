@@ -1,33 +1,35 @@
 :root {
   /* --- Color: warm white base, chili-oil orange accent, broth-brown ink --- */
-  --bg: #fcfaf6;
-  --surface: #fff4e8;
+  --bg: #f4f1eb;
+  --surface: #fffdf9;
   --surface-raised: #ffffff;
-  --ink: #2a211b;
-  --ink-soft: #6f5f52;
-  --ink-faint: #a89a8b;
-  --line: #ecdfcd;
-  --accent: #e4572e;
-  --accent-dark: #b23f1e;
-  --accent-soft: #fbd9c2;
-  --accent-ink: #fff8f3;
-  --success: #5f7a52;
-  --header-bg: rgba(252, 250, 246, 0.92);
+  --ink: #171717;
+  --ink-soft: #77736c;
+  --ink-faint: #aaa59b;
+  --line: #e5e1d9;
+  --accent: #e6b84d;
+  --accent-dark: #a67a18;
+  --accent-soft: #f7e6b9;
+  --accent-ink: #171717;
+  --success: #6e8262;
+  --header-bg: rgba(244, 241, 235, 0.9);
+  --dark: #11110f;
+  --dark-soft: #292924;
 
   /* --- Type --- */
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* --- Shape & rhythm --- */
-  --radius-ticket: 4px 4px 18px 4px;
+  --radius-ticket: 18px;
   --radius-bowl: 999px;
-  --radius-card: 14px;
+  --radius-card: 18px;
   --space-1: 0.4rem;
   --space-2: 0.8rem;
   --space-3: 1.4rem;
   --space-4: 2.2rem;
   --space-5: 3.6rem;
-  --shadow-card: 0 1px 2px rgba(42, 33, 27, 0.06), 0 8px 20px -12px rgba(42, 33, 27, 0.18);
+  --shadow-card: 0 10px 30px -22px rgba(17, 17, 15, 0.35);
   --max-content: 1180px;
   --max-column: 460px;
 }
@@ -44,6 +46,36 @@
   --accent-ink: #fff8f3;
   --header-bg: rgba(17, 17, 17, 0.96);
   --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35), 0 8px 20px -12px rgba(0, 0, 0, 0.65);
+}
+
+:root.theme-dark .admin-shell {
+  background: #0d0e0c;
+  color: var(--ink);
+}
+
+:root.theme-dark .admin-topbar,
+:root.theme-dark .admin-stat,
+:root.theme-dark .admin-panel {
+  border-color: var(--line);
+  background: var(--surface);
+}
+
+:root.theme-dark .admin-topbar {
+  background: var(--surface-raised);
+}
+
+:root.theme-dark .admin-stat--accent {
+  border-color: #765c20;
+  background: #3c321c;
+}
+
+:root.theme-dark .admin-table td,
+:root.theme-dark .admin-menu-row {
+  border-color: var(--line);
+}
+
+:root.theme-dark .admin-note-panel {
+  background: #090a08;
 }
 
 @media (prefers-color-scheme: dark) {

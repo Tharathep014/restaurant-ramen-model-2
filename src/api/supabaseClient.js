@@ -11,16 +11,20 @@ import { createClient } from '@supabase/supabase-js'
 // .env is already git-ignored (see .gitignore).
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseKey =
-  import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ||
-  'sb_publishable_Of8u6YOf1nweH_RYibo2jA_-9aHR7uf'
+const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
 
-if (!supabaseUrl) {
+const hasRealSupabaseConfig =
+  Boolean(supabaseUrl) &&
+  !supabaseUrl.includes('YOUR-PROJECT-REF') &&
+  Boolean(supabaseKey) &&
+  !supabaseKey.includes('YOUR-PROJECT-REF')
+
+if (!hasRealSupabaseConfig) {
   // Don't throw — let the app run with local mock data (see src/data/menu.js)
-  // until a real project URL is added to .env.
+  // until a real project URL and anon key are added to .env.
   console.warn(
-    '[supabaseClient] VITE_SUPABASE_URL is not set. Running with local mock data only.'
+    '[supabaseClient] Supabase is not configured. Running with local mock data only.'
   )
 }
 
-export const supabase = supabaseUrl ? createClient(supabaseUrl, supabaseKey) : null
+export const supabase = hasRealSupabaseConfig ? createClient(supabaseUrl, supabaseKey) : null

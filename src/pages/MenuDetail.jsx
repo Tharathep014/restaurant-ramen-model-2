@@ -15,8 +15,10 @@ export default function MenuDetail() {
   const [item, setItem] = useState(null)
   const [quantity, setQuantity] = useState(1)
   const [added, setAdded] = useState(false)
+  const [imageFailed, setImageFailed] = useState(false)
 
   useEffect(() => {
+    setImageFailed(false)
     getMenuItem(itemId).then(setItem)
   }, [itemId])
 
@@ -49,7 +51,16 @@ export default function MenuDetail() {
           marginBottom: 'var(--space-3)',
         }}
       >
-        <BowlMark size={80} />
+        {item.image && !imageFailed ? (
+          <img
+            className="menu-detail__image"
+            src={item.image}
+            alt={item.name}
+            onError={() => setImageFailed(true)}
+          />
+        ) : (
+          <BowlMark size={80} />
+        )}
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>

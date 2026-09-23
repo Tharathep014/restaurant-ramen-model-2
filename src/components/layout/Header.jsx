@@ -9,21 +9,18 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="container site-header__row">
-        <NavLink to="/" className="brand" style={{ textDecoration: 'none' }}>
+        <div className="topbar__welcome">
+          <span className="topbar__kicker">NAMI RAMEN</span>
+          <strong>Good to see you</strong>
+        </div>
+        <NavLink to="/" className="brand" style={{ textDecoration: 'none' }} aria-label={RESTAURANT_NAME}>
           <BowlMark size={26} />
-          {RESTAURANT_NAME}
+          <span>{RESTAURANT_NAME}</span>
         </NavLink>
-
-        <nav className="top-nav" aria-label="Primary">
-          <NavLink to="/categories/ramen">Menu</NavLink>
-        </nav>
 
         <div className="header-actions">
           <NavLink to="/profile" className="icon-btn" aria-label="Profile" title="Profile">
             <span aria-hidden="true">👤</span>
-          </NavLink>
-          <NavLink to="/search" className="icon-btn" aria-label="Search menu" title="Search menu">
-            <span aria-hidden="true">⌕</span>
           </NavLink>
           <NavLink to="/cart" className="icon-btn" aria-label="Cart">
             🛒

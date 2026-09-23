@@ -11,8 +11,10 @@ export default function Home() {
     <div>
       <section className="hero">
         <div className="container">
-          <p className="hero__greeting">Good to see you</p>
-          <h1>What are you craving today?</h1>
+          <div className="hero__copy">
+            <p className="hero__eyebrow">PREMIUM RAMEN BAR</p>
+            <h1>Slow broth.<br /><em>Big comfort.</em></h1>
+          </div>
           <p style={{ marginTop: '0.6rem' }}>
             Broth goes on at 6am. Order ahead for pickup, or have it brought to you.
           </p>

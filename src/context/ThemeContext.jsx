@@ -6,7 +6,6 @@ export function ThemeProvider({ children }) {
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('nami-dark-mode') === 'true')
 
   useEffect(() => {
-    document.documentElement.dataset.theme = darkMode ? 'dark' : 'light'
     document.documentElement.classList.toggle('theme-dark', darkMode)
     localStorage.setItem('nami-dark-mode', String(darkMode))
   }, [darkMode])

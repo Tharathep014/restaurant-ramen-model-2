@@ -16,6 +16,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img,
@@ -26,6 +27,7 @@ svg {
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 button {
@@ -42,7 +44,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
   font-weight: 600;
   line-height: 1.05;
 }
@@ -73,12 +75,15 @@ p {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-bottom: 76px; /* space for bottom nav on mobile */
+  padding-bottom: 76px;
 }
+
+.app-main { flex: 1; min-width: 0; }
 
 @media (min-width: 900px) {
   .app-shell {
     padding-bottom: 0;
+    padding-left: 250px;
   }
 }
 

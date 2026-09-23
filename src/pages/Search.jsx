@@ -7,12 +7,19 @@ export default function Search() {
   const { items, loading } = useMenu()
   const normalizedQuery = query.trim().toLowerCase()
   const results = useMemo(
-    () =>
-      items.filter((item) =>
-        [item.name, item.description, item.tag].filter(Boolean).some((value) =>
-          value.toLowerCase().includes(normalizedQuery)
-        )
-      ),
+    () => {
+      if (!normalizedQuery) return []
+
+      return items
+        .filter((item) => item.name.toLowerCase().includes(normalizedQuery))
+        .sort((firstItem, secondItem) => {
+          const firstName = firstItem.name.toLowerCase()
+          const secondName = secondItem.name.toLowerCase()
+          const firstScore = firstName === normalizedQuery ? 0 : firstName.startsWith(normalizedQuery) ? 1 : 2
+          const secondScore = secondName === normalizedQuery ? 0 : secondName.startsWith(normalizedQuery) ? 1 : 2
+          return firstScore - secondScore
+        })
+    },
     [items, normalizedQuery]
   )
 
@@ -33,7 +40,10 @@ export default function Search() {
         </div>
       </div>
       <div className="search-page__results">
-        {!loading && normalizedQuery && results.length === 0 && <p>No menu items found.</p>}
+        {!loading && normalizedQuery && (
+          <h2 className="search-page__results-title">Results for “{query.trim()}”</h2>
+        )}
+        {!loading && normalizedQuery && results.length === 0 && <p>No results found</p>}
         {!loading && results.map((item) => <MenuCard key={item.id} item={item} />)}
       </div>
     </main>
