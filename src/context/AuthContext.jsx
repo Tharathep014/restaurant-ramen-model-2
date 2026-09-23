@@ -30,7 +30,7 @@ export function AuthProvider({ children }) {
   async function signInWithEmail(email, password) {
     if (!supabase) {
       // No backend yet — treat as a guest session so the flow can be tested.
-      setUser({ email, role: 'user' })
+      setUser({ id: `local-${email}`, email, role: 'user' })
       return { error: null }
     }
     const { data, error } = await supabase.auth.signInWithPassword({ email, password })
@@ -40,7 +40,7 @@ export function AuthProvider({ children }) {
 
   async function signInAsAdmin(email, password) {
     if (!supabase) {
-      setUser({ email, role: 'admin' })
+      setUser({ id: `local-${email}`, email, role: 'admin' })
       return { error: null }
     }
 

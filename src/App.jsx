@@ -12,6 +12,7 @@ import Search from './pages/Search'
 import Admin from './pages/Admin'
 import { AdminLayout } from './components/layout/AdminLayout'
 import AdminSignIn from './pages/AdminSignIn'
+import InfoPage from './pages/InfoPage'
 import { ThemeProvider } from './context/ThemeContext'
 import { useAuth } from './context/AuthContext'
 
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/profile" element={<Profile />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/info/:page" element={<InfoPage />} />
       </Route>
       <Route path="/admin/sign-in" element={<AdminSignIn />} />
       <Route element={<RequireAdmin><AdminLayout /></RequireAdmin>}>

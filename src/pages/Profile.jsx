@@ -1,12 +1,29 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { useTheme } from '../context/ThemeContext'
 import { Button } from '../components/ui/Button'
 import { BowlMark } from '../components/ui/BowlMark'
+import { getUserOrders } from '../services/orderService'
+import { getWalletBalance } from '../services/walletService'
+import { formatCurrency } from '../utils/formatCurrency'
 
 export default function Profile() {
   const { user, signOut } = useAuth()
   const { darkMode, setDarkMode } = useTheme()
+  const navigate = useNavigate()
+  const [orders, setOrders] = useState([])
+  const [walletBalance, setWalletBalance] = useState(0)
+
+  useEffect(() => {
+    if (!user) return
+    Promise.all([getUserOrders(user.id), getWalletBalance(user.id)])
+      .then(([userOrders, balance]) => {
+        setOrders(userOrders)
+        setWalletBalance(balance)
+      })
+      .catch((error) => globalThis.console.error('[Profile] could not load account data:', error))
+  }, [user])
 
   if (!user) {
     return (
@@ -49,8 +66,13 @@ export default function Profile() {
       <div className="profile-wallet">
         <span className="profile-wallet__icon" aria-hidden="true">$</span>
         <span>Wallet balance</span>
-        <strong>฿0.00</strong>
+        <strong>{formatCurrency(walletBalance)}</strong>
       </div>
+
+      <section className="profile-orders">
+        <div className="profile-section-heading"><h2>Order history</h2><span>{orders.length}</span></div>
+        {orders.length ? orders.slice(0, 4).map((order) => <button className="profile-order" type="button" key={order.id} onClick={() => navigate('/order-confirmed', { state: { order } })}><span><strong>#{order.id}</strong><small>{new Date(order.placed_at).toLocaleDateString()} · {order.status}</small></span><b>{formatCurrency(order.total)}</b><span aria-hidden="true">›</span></button>) : <p className="profile-empty">Your completed orders will appear here.</p>}
+      </section>
 
       <div className="profile-settings">
         <div className="profile-setting profile-setting--toggle">
@@ -69,16 +91,16 @@ export default function Profile() {
             <span />
           </button>
         </div>
-        <ProfileRow icon="i" title="About Nami" detail="Learn more about Nami Ramen" />
-        <ProfileRow icon="A" title="Language" detail="English" />
-        <ProfileRow icon="♡" title="Favorites" detail="Your favorite menu items" />
-        <ProfileRow icon="⚙" title="Settings" detail="Security and preferences" />
+        <ProfileRow icon="i" title="About Nami" detail="Learn more about Nami Ramen" to="/info/about" />
+        <ProfileRow icon="A" title="Language" detail="English" onClick={() => globalThis.alert('Language: English')} />
+        <ProfileRow icon="♡" title="Favorites" detail="Your favorite menu items" to="/categories/ramen" />
+        <ProfileRow icon="⚙" title="Settings" detail="Security and preferences" onClick={() => globalThis.alert('Account settings are managed through your sign-in provider.')} />
       </div>
 
       <div className="profile-settings profile-settings--secondary">
-        <ProfileRow icon="?" title="FAQ" detail="Payments, delivery, and more" />
-        <ProfileRow icon="§" title="Terms of Use" detail="Nami Ramen terms of service" />
-        <ProfileRow icon="□" title="Privacy Policy" detail="Privacy and data information" />
+        <ProfileRow icon="?" title="FAQ" detail="Payments, delivery, and more" to="/info/faq" />
+        <ProfileRow icon="§" title="Terms of Use" detail="Nami Ramen terms of service" to="/info/terms" />
+        <ProfileRow icon="□" title="Privacy Policy" detail="Privacy and data information" to="/info/privacy" />
       </div>
 
       <div className="profile-page__signout">
@@ -90,15 +112,12 @@ export default function Profile() {
   )
 }
 
-function ProfileRow({ icon, title, detail }) {
+function ProfileRow({ icon, title, detail, to, onClick }) {
+  const content = <><span className="profile-setting__icon">{icon}</span><span className="profile-setting__copy"><strong>{title}</strong><small>{detail}</small></span><span className="profile-setting__arrow" aria-hidden="true">›</span></>
+  if (to) return <Link className="profile-setting" to={to}>{content}</Link>
   return (
-    <button className="profile-setting" type="button">
-      <span className="profile-setting__icon">{icon}</span>
-      <span className="profile-setting__copy">
-        <strong>{title}</strong>
-        <small>{detail}</small>
-      </span>
-      <span className="profile-setting__arrow" aria-hidden="true">›</span>
+    <button className="profile-setting" type="button" onClick={onClick}>
+      {content}
     </button>
   )
 }
